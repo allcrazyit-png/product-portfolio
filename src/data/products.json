@@ -1,0 +1,899 @@
+[
+  {
+    "id": "G92D1-VU010",
+    "name": "DUCT, HV BATTERY INTAKE",
+    "category": "841W",
+    "description": "DUCT, HV BATTERY INTAKE for 841W",
+    "image": "G92D1-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "93g±6g",
+      "material": "FTP20DY-202B",
+      "machine": "550T (501機)",
+      "ct_time": "52",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "G92D1-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "G92D1-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "G92D1-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "62511-VU010",
+    "name": "後右側背板)",
+    "category": "841W",
+    "description": "後右側背板) for 841W",
+    "image": "62511-vu010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "2430g±50g",
+      "material": "FTP20DY-202B",
+      "machine": "3200T (321機)",
+      "ct_time": "80",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62511-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62511-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62511-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "62512-VU010",
+    "name": "後左側背板)",
+    "category": "841W",
+    "description": "後左側背板) for 841W",
+    "image": "62512-vu010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "2480g±50g",
+      "material": "FTP20DY-202B",
+      "machine": "3200T (321機)",
+      "ct_time": "80",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62512-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62512-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62512-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "67750-VU010",
+    "name": "尾門飾板",
+    "category": "841W",
+    "description": "尾門飾板 for 841W",
+    "image": "67750-vu010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "2040g±45g",
+      "material": "CN-BP7SYTW",
+      "machine": "2700T (312機)",
+      "ct_time": "60",
+      "mold_maker": "博盛頓"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "67750-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "67750-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "67750-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "CN-BP7SYTW"
+    ]
+  },
+  {
+    "id": "67761-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "67761-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "67761-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "67761-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "67761-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "69321-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "69321-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "69321-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "69321-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "69321-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "81218-X1C00",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "81218-X1C00_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "81218-X1C00_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "81218-X1C00_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "81218-X1C00_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "55303-VU010",
+    "name": "IP下段",
+    "category": "841W",
+    "description": "IP下段 for 841W",
+    "image": "55303-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "1780g±40g",
+      "material": "APIP5G-202B",
+      "machine": "2700T (312機)",
+      "mold_maker": "巨達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "55303-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "55303-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "55303-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "APIP5G-202B"
+    ]
+  },
+  {
+    "id": "55514-VU010",
+    "name": "安全氣囊",
+    "category": "841W",
+    "description": "安全氣囊 for 841W",
+    "image": "55514-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "339g±3g",
+      "material": "TT935N1J",
+      "machine": "450T (502機)",
+      "mold_maker": "祐振"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "55514-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "55514-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "55514-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "TT935N1J"
+    ]
+  },
+  {
+    "id": "62225-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "62225(6)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "130g±8g",
+      "material": "APIP5G-202B",
+      "machine": "550T (501機)",
+      "mold_maker": "和成"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62225(6)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62225(6)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62225(6)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "APIP5G-202B"
+    ]
+  },
+  {
+    "id": "622256-VU011",
+    "name": "",
+    "category": "842W",
+    "description": " for 842W",
+    "image": "62225(6)-VU011_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "130g±9g",
+      "material": "APIP5G-203B",
+      "machine": "550T (502機)",
+      "mold_maker": "和成"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62225(6)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62225(6)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62225(6)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "842W",
+      "APIP5G-203B"
+    ]
+  },
+  {
+    "id": "62410-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "62410(20)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "283g±16g",
+      "material": "APIP5G-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "祥興"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62410(20)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62410(20)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62410(20)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "APIP5G-202B"
+    ]
+  },
+  {
+    "id": "62420-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "62410(20)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "283g±16g",
+      "material": "APIP5G-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "祥興"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62410(20)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62410(20)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62410(20)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "APIP5G-202B"
+    ]
+  },
+  {
+    "id": "624511-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "62451(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "154g±6g",
+      "material": "CN-BP1TW-202B",
+      "machine": "550T (501機)",
+      "mold_maker": "岡峰"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62451(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62451(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62451(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "CN-BP1TW-202B"
+    ]
+  },
+  {
+    "id": "624512-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "62451(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "154g±6g",
+      "material": "CN-BP1TW-202B",
+      "machine": "550T (501機)",
+      "mold_maker": "岡峰"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "62451(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "62451(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "62451(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "CN-BP1TW-202B"
+    ]
+  },
+  {
+    "id": "67917-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "67917(8)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "655g±10g",
+      "material": "FTP20DY-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "富項"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "67917(8)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "67917(8)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "67917(8)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "67918-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "67917(8)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "655g±10g",
+      "material": "FTP20DY-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "富項"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "67917(8)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "67917(8)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "67917(8)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "71139-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "71139-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "548g±10g",
+      "material": "FTP20DY-202B",
+      "machine": "600T (機)",
+      "mold_maker": "嘉泰"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "71139-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "71139-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "71139-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "71149-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "71149-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "626g±15g",
+      "material": "FTP20DY-202B",
+      "machine": "600T (機)",
+      "mold_maker": "嘉泰"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "71149-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "71149-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "71149-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY-202B"
+    ]
+  },
+  {
+    "id": "71861-VU010",
+    "name": "仰臥器外蓋",
+    "category": "841W",
+    "description": "仰臥器外蓋 for 841W",
+    "image": "71861(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "310g±6g",
+      "material": "FTP20PDY-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "71861(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "71861(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "71861(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20PDY-202B"
+    ]
+  },
+  {
+    "id": "71862-VU010",
+    "name": "仰臥器外蓋",
+    "category": "841W",
+    "description": "仰臥器外蓋 for 841W",
+    "image": "71861(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "345g±6g",
+      "material": "FTP20PDY-202B",
+      "machine": "800T (102機)",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "71861(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "71861(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "71861(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20PDY-202B"
+    ]
+  },
+  {
+    "id": "76871-VU010",
+    "name": "尾翼上蓋",
+    "category": "841W",
+    "description": "尾翼上蓋 for 841W",
+    "image": "76871-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "1190g±10g",
+      "material": "PX18-X02",
+      "machine": "2200T (221機)",
+      "mold_maker": "博盛頓"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76871-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76871-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76871-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "PX18-X02"
+    ]
+  },
+  {
+    "id": "76876-VU010",
+    "name": "尾翼下蓋",
+    "category": "841W",
+    "description": "尾翼下蓋 for 841W",
+    "image": "76876-VU010_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "1310g±10g",
+      "material": "TA42C-X01",
+      "machine": "1500T (152機)",
+      "mold_maker": "博盛頓"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76876-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76876-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76876-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "TA42C-X01"
+    ]
+  },
+  {
+    "id": "76911-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "76911(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76911(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76911(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76911(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "76912-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "76911(2)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76911(2)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76911(2)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76911(2)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "76917-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "76917(8)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76917(8)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76917(8)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76917(8)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "76918-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "76917(8)-VU010_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "76917(8)-VU010_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "76917(8)-VU010_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "76917(8)-VU010_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      ""
+    ]
+  },
+  {
+    "id": "79236-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "79236(46)-VU020(010)_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "202g±5g",
+      "material": "FTP20DY",
+      "machine": "800T (102機)",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "79236(46)-VU020(010)_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "79236(46)-VU020(010)_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "79236(46)-VU020(010)_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY"
+    ]
+  },
+  {
+    "id": "79246-VU010",
+    "name": "",
+    "category": "841W",
+    "description": " for 841W",
+    "image": "79236(46)-VU020(010)_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "202g±5g",
+      "material": "FTP20DY",
+      "machine": "800T (102機)",
+      "mold_maker": "源達"
+    },
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "79236(46)-VU020(010)_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "79236(46)-VU020(010)_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "79236(46)-VU020(010)_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "841W",
+      "FTP20DY"
+    ]
+  }
+]
