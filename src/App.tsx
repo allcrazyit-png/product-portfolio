@@ -39,7 +39,7 @@ function App() {
                                 <Box size={24} />
                             </div>
                             <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                                產品履歷
+                                瑞全公司產品履歷
                             </h1>
                         </div>
 
@@ -62,8 +62,8 @@ function App() {
                         <button
                             onClick={() => setSelectedCategory(null)}
                             className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${!selectedCategory
-                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
-                                    : 'bg-white hover:bg-gray-100 text-gray-600 border'
+                                ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
+                                : 'bg-white hover:bg-gray-100 text-gray-600 border'
                                 }`}
                         >
                             全部展示
@@ -73,8 +73,8 @@ function App() {
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${selectedCategory === category
-                                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
-                                        : 'bg-white hover:bg-gray-100 text-gray-600 border'
+                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
+                                    : 'bg-white hover:bg-gray-100 text-gray-600 border'
                                     }`}
                             >
                                 {category}
