@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
 import { Search, Filter, Box } from 'lucide-react';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
@@ -28,42 +29,47 @@ function App() {
     }, [searchQuery, selectedCategory]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-foreground transition-colors duration-300">
+        <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#000000] text-foreground font-sans selection:bg-blue-500/30">
+            {/* Ambient Background */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-400/10 blur-[100px] animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-400/10 blur-[100px] animate-pulse delay-1000" />
+            </div>
 
             {/* Header */}
-            <header className="sticky top-0 z-40 w-full backdrop-blur-lg bg-background/80 border-b shadow-sm">
+            <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/70 dark:bg-black/70 border-b border-white/20 shadow-sm supports-[backdrop-filter]:bg-white/60 transition-all duration-300">
                 <div className="container mx-auto px-4 py-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="flex items-center gap-2">
-                            <div className="p-2 bg-primary rounded-lg text-primary-foreground">
-                                <Box size={24} />
+                        <div className="flex items-center gap-3">
+                            <div className="p-2.5 bg-gradient-to-br from-gray-900 to-gray-700 text-white rounded-xl shadow-lg">
+                                <Box size={20} />
                             </div>
-                            <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                            <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white bg-clip-text">
                                 瑞全公司產品履歷
                             </h1>
                         </div>
 
                         {/* Search Bar */}
                         <div className="relative w-full md:w-96 group">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground group-focus-within:text-primary transition-colors" size={20} />
+                            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-500 transition-colors" size={18} />
                             <input
                                 type="text"
                                 placeholder="搜尋產品名稱、編號..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2 rounded-full bg-secondary/50 border-transparent focus:bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+                                className="w-full pl-11 pr-4 py-2.5 rounded-2xl bg-gray-100/50 dark:bg-gray-800/50 border border-transparent focus:bg-white dark:focus:bg-gray-800 focus:shadow-lg focus:shadow-blue-500/10 transition-all outline-none text-sm placeholder:text-gray-400"
                             />
                         </div>
                     </div>
 
                     {/* Categories */}
-                    <div className="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar">
-                        <Filter size={16} className="text-muted-foreground shrink-0" />
+                    <div className="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar mask-gradient-x">
+                        <Filter size={16} className="text-gray-400 shrink-0 ml-1" />
                         <button
                             onClick={() => setSelectedCategory(null)}
-                            className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${!selectedCategory
-                                ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
-                                : 'bg-white hover:bg-gray-100 text-gray-600 border'
+                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${!selectedCategory
+                                ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20 scale-105'
+                                : 'bg-transparent text-gray-500 hover:bg-gray-100/50 hover:text-gray-900'
                                 }`}
                         >
                             全部展示
@@ -72,9 +78,9 @@ function App() {
                             <button
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
-                                className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${selectedCategory === category
-                                    ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25'
-                                    : 'bg-white hover:bg-gray-100 text-gray-600 border'
+                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${selectedCategory === category
+                                    ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20 scale-105'
+                                    : 'bg-transparent text-gray-500 hover:bg-gray-100/50 hover:text-gray-900'
                                     }`}
                             >
                                 {category}
@@ -85,25 +91,39 @@ function App() {
             </header>
 
             {/* Main Content */}
-            <main className="container mx-auto px-4 py-8">
+            <main className="container mx-auto px-4 py-8 relative z-10">
                 {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {filteredProducts.map(product => (
-                            <ProductCard
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                    >
+                        {filteredProducts.map((product, index) => (
+                            <motion.div
                                 key={product.id}
-                                product={product}
-                                onClick={setSelectedProduct}
-                            />
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                            >
+                                <ProductCard
+                                    product={product}
+                                    onClick={setSelectedProduct}
+                                />
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 ) : (
-                    <div className="text-center py-20">
-                        <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-muted mb-4">
-                            <Search size={32} className="text-muted-foreground" />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-center py-32"
+                    >
+                        <div className="inline-flex justify-center items-center w-20 h-20 rounded-3xl bg-gray-100 dark:bg-gray-900 mb-6 shadow-inner">
+                            <Search size={32} className="text-gray-400" />
                         </div>
-                        <h3 className="text-lg font-medium text-foreground">找不到相關產品</h3>
-                        <p className="text-muted-foreground">試試看其他的關鍵字或清除篩選條件</p>
-                    </div>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">找不到相關產品</h3>
+                        <p className="text-gray-500">試試看其他的關鍵字或清除篩選條件</p>
+                    </motion.div>
                 )}
             </main>
 
