@@ -129,10 +129,7 @@ function App() {
                 )}
             </main>
 
-            {/* Version Footer */}
-            <footer className="text-center py-6 text-xs text-gray-300 dark:text-gray-700 pointer-events-none">
-                v1.2 (Touch Fix)
-            </footer>
+
 
             {/* Modal */}
             {selectedProduct && (
