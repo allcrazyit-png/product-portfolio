@@ -4,6 +4,12 @@ export interface ProductSpecs {
     machine: string;
     ct_time: string;
     mold_maker: string;
+    post_process?: string;
+    customer?: string;
+    assembly_time?: string;
+    container?: string;
+    capacity?: string;
+    monthly_demand?: string;
 }
 
 export interface Document {
@@ -19,6 +25,8 @@ export interface Product {
     image: string;
     status: string;
     specs: ProductSpecs;
+    qc_points: string[];
+    history: string;
     documents: Document[];
     tags: string[];
 }
