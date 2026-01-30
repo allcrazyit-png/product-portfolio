@@ -19,7 +19,7 @@ with open(csv_file_path, mode='r', encoding='utf-8-sig') as csv_file:
             "image": row['產品圖片'],
             "status": "Production", # Default status
             "specs": {
-                "weight": row['標準重量(g)'],
+                "weight": row['重量公差'],
                 "material": row['原料編號'],
                 "machine": row['生產機台'],
                 "ct_time": row['CT時間(秒)'],

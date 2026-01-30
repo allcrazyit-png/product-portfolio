@@ -207,6 +207,6 @@ const SpecBox = ({ icon, label, value, colSpan = 1 }: { icon: React.ReactNode, l
             {React.cloneElement(icon as React.ReactElement, { size: 14 })}
             <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
         </div>
-        <p className="font-semibold text-sm text-foreground truncate" title={value}>{value || '-'}</p>
+        <p className="font-semibold text-sm text-foreground break-words leading-snug" title={value}>{value || '-'}</p>
     </div>
 );
