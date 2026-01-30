@@ -26,7 +26,7 @@ with open(csv_file_path, mode='r', encoding='utf-8-sig') as csv_file:
                 "mold_maker": row['模具廠商'],
                 "post_process": row.get('後加工組立', ''),
                 "assembly_time": row.get('組立時間', ''),
-                "customer": row.get('客戶', ''),
+
                 "container": row.get('出貨容器', ''),
                 "capacity": row.get('收容數', ''),
                 "monthly_demand": row.get('月需求量', '')

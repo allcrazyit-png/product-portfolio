@@ -85,11 +85,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                 {/* Section 2: Logistics */}
                                 <div>
                                     <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">物流資訊</h3>
-                                    <div className="grid grid-cols-3 gap-3">
-                                        <div className="p-4 rounded-2xl bg-secondary/30 border border-secondary">
-                                            <div className="text-xs text-muted-foreground mb-1">客戶</div>
-                                            <div className="font-semibold text-foreground truncate">{product.specs.customer || '-'}</div>
-                                        </div>
+                                    <div className="grid grid-cols-2 gap-3">
                                         <div className="p-4 rounded-2xl bg-secondary/30 border border-secondary">
                                             <div className="text-xs text-muted-foreground mb-1">容器</div>
                                             <div className="font-semibold text-foreground">{product.specs.container || '-'}</div>
