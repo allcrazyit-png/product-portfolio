@@ -11,6 +11,8 @@ interface ProductModalProps {
 export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
     if (!product) return null;
 
+    const [previewDoc, setPreviewDoc] = React.useState<string | null>(null);
+
     return (
         <AnimatePresence>
             {product && (
@@ -38,7 +40,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                         </button>
 
                         {/* Left: Image & Key Info */}
-                        <div className="w-full md:w-2/5 relative flex flex-col">
+                        <div className="w-full md:w-2/5 relative flex flex-col shrink-0">
                             <div className="h-64 md:h-full relative overflow-hidden bg-black">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10" />
                                 {product.image ? (
@@ -63,8 +65,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                         </div>
 
                         {/* Right: Bento Grid Details */}
-                        <div className="w-full md:w-3/5 p-6 md:p-8 overflow-y-auto bg-background">
-                            <div className="space-y-6">
+                        <div className="w-full md:w-3/5 p-6 md:p-8 overflow-y-auto bg-background flex flex-col min-h-0">
+                            <div className="space-y-6 flex-1">
 
                                 {/* Section 1: Core Specs (Bento) */}
                                 <div>
@@ -136,19 +138,17 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                     <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">相關文件</h3>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {product.documents.map((doc, idx) => (
-                                            <a
+                                            <button
                                                 key={idx}
-                                                href={`assets/${doc.url}`}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center justify-between p-4 rounded-xl bg-card border border-border hover:border-primary hover:bg-primary/5 transition-all group shadow-sm text-sm font-medium"
+                                                onClick={() => setPreviewDoc(doc.url)}
+                                                className="flex items-center justify-between p-4 rounded-xl bg-card border border-border hover:border-primary hover:bg-primary/5 transition-all group shadow-sm text-sm font-medium w-full text-left"
                                             >
                                                 <span className="flex items-center gap-2">
                                                     <FileText size={16} className="text-primary" />
                                                     {doc.type}
                                                 </span>
                                                 <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                                            </a>
+                                            </button>
                                         ))}
                                         {product.documents.length === 0 && (
                                             <div className="col-span-full text-center py-4 text-sm text-muted-foreground bg-secondary/20 rounded-xl border border-dashed border-secondary">
@@ -157,9 +157,42 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                         )}
                                     </div>
                                 </div>
+                            </div>
 
+                            {/* Bottom Close Button */}
+                            <div className="mt-8 pt-6 border-t border-border/50">
+                                <button
+                                    onClick={onClose}
+                                    className="w-full py-3 rounded-xl bg-secondary hover:bg-secondary/80 text-secondary-foreground font-medium transition-colors"
+                                >
+                                    關閉
+                                </button>
                             </div>
                         </div>
+
+                        {/* Document Preview Modal */}
+                        <AnimatePresence>
+                            {previewDoc && (
+                                <div className="absolute inset-0 z-[60] flex flex-col bg-background">
+                                    <div className="flex items-center justify-between p-4 border-b bg-card">
+                                        <h3 className="font-bold">文件預覽</h3>
+                                        <button
+                                            onClick={() => setPreviewDoc(null)}
+                                            className="p-2 rounded-full hover:bg-secondary transition-colors"
+                                        >
+                                            <X size={20} />
+                                        </button>
+                                    </div>
+                                    <div className="flex-1 bg-muted p-4 overflow-hidden">
+                                        <iframe
+                                            src={`assets/${previewDoc}`}
+                                            className="w-full h-full rounded-xl border bg-white shadow-sm"
+                                            title="Document Preview"
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
                 </div>
             )}
