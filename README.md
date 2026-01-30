@@ -84,5 +84,5 @@ This is a modern, responsive single-page application built with React, Vite, and
 ## Project Structure
 - `src/components`: React components (ProductCard, ProductModal).
 - `src/data`: Contains `products.json` (generated from CSV).
-- `public/images`: Product images.
-- `public/sop`: PDF documents.
+- `public/assets`: **Store all images and PDFs here.**
+
