@@ -65,33 +65,35 @@ function App() {
                     {/* Categories */}
                     <div className="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar mask-gradient-x">
                         <Filter size={16} className="text-gray-400 shrink-0 ml-1" />
-                        <button
-                            onClick={() => setSelectedCategory(null)}
-                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 touch-manipulation select-none cursor-pointer ${!selectedCategory
+                        <motion.button
+                            onTap={() => setSelectedCategory(null)}
+                            whileTap={{ scale: 0.95 }}
+                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${!selectedCategory
                                 ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20'
                                 : 'bg-transparent text-gray-500 md:hover:text-gray-900 md:hover:bg-gray-100/50'
                                 }`}
                         >
                             全部展示
-                        </button>
+                        </motion.button>
                         {CATEGORIES.map(category => (
-                            <button
+                            <motion.button
                                 key={category}
-                                onClick={() => setSelectedCategory(category)}
-                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 touch-manipulation select-none cursor-pointer ${selectedCategory === category
+                                onTap={() => setSelectedCategory(category)}
+                                whileTap={{ scale: 0.95 }}
+                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${selectedCategory === category
                                     ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20'
                                     : 'bg-transparent text-gray-500 md:hover:text-gray-900 md:hover:bg-gray-100/50'
                                     }`}
                             >
                                 {category}
-                            </button>
+                            </motion.button>
                         ))}
                     </div>
                 </div>
             </header>
 
             {/* Main Content */}
-            <main className="container mx-auto px-4 py-8 relative z-10">
+            <main className="container mx-auto px-4 py-8 relative z-10 min-h-[60vh]">
                 {filteredProducts.length > 0 ? (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -126,6 +128,11 @@ function App() {
                     </motion.div>
                 )}
             </main>
+
+            {/* Version Footer */}
+            <footer className="text-center py-6 text-xs text-gray-300 dark:text-gray-700 pointer-events-none">
+                v1.2 (Touch Fix)
+            </footer>
 
             {/* Modal */}
             {selectedProduct && (
