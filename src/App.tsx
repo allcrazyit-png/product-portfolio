@@ -67,8 +67,8 @@ function App() {
                         <Filter size={16} className="text-gray-400 shrink-0 ml-1" />
                         <button
                             onClick={() => setSelectedCategory(null)}
-                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 active:scale-95 touch-manipulation select-none ${!selectedCategory
-                                ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20 scale-105'
+                            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 touch-manipulation select-none cursor-pointer ${!selectedCategory
+                                ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20'
                                 : 'bg-transparent text-gray-500 md:hover:text-gray-900 md:hover:bg-gray-100/50'
                                 }`}
                         >
@@ -78,8 +78,8 @@ function App() {
                             <button
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
-                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 active:scale-95 touch-manipulation select-none ${selectedCategory === category
-                                    ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20 scale-105'
+                                className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 touch-manipulation select-none cursor-pointer ${selectedCategory === category
+                                    ? 'bg-gray-900 text-white shadow-lg shadow-gray-900/20'
                                     : 'bg-transparent text-gray-500 md:hover:text-gray-900 md:hover:bg-gray-100/50'
                                     }`}
                             >
