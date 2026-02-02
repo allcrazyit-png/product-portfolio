@@ -330,7 +330,7 @@
     ]
   },
   {
-    "id": "62225/26-VU010",
+    "id": "62225/6-VU010",
     "name": "A柱下飾板右(左)",
     "category": "841W",
     "description": "A柱下飾板右(左) for 841W",
@@ -400,7 +400,7 @@
     ]
   },
   {
-    "id": "624511/12-VU010",
+    "id": "62451/2-VU010",
     "name": "天井側邊飾板右(左)",
     "category": "841W",
     "description": "天井側邊飾板右(左) for 841W",
@@ -436,7 +436,7 @@
     ]
   },
   {
-    "id": "67917/18-VU010",
+    "id": "67917/8-VU010",
     "name": "",
     "category": "841W",
     "description": " for 841W",
@@ -543,11 +543,11 @@
     ]
   },
   {
-    "id": "71861/62-VU010",
+    "id": "71861/2-VU010",
     "name": "仰臥器外蓋",
     "category": "841W",
     "description": "仰臥器外蓋 for 841W",
-    "image": "71861(2)-VU010_main.jpg",
+    "image": "71861_2-VU010_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "RH:310g±6g\nLH:345g±6g",
@@ -649,7 +649,7 @@
     ]
   },
   {
-    "id": "76911/12-VU010",
+    "id": "76911/2-VU010",
     "name": "",
     "category": "841W",
     "description": " for 841W",
@@ -680,7 +680,7 @@
     ]
   },
   {
-    "id": "76917/18-VU010",
+    "id": "76917/8-VU010",
     "name": "",
     "category": "841W",
     "description": " for 841W",
@@ -755,7 +755,7 @@
     "status": "Production",
     "specs": {
       "weight": "332g±5g",
-      "material": "FTP30DY-202B ",
+      "material": "FTP30DY-202B",
       "machine": "550T (501機)",
       "ct_time": "57",
       "mold_maker": "源達",
@@ -779,7 +779,7 @@
     ],
     "tags": [
       "JS",
-      "FTP30DY-202B "
+      "FTP30DY-202B"
     ]
   }
 ]
