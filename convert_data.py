@@ -6,13 +6,19 @@ csv_file_path = '瑞全公司產品履歷.csv'
 json_file_path = 'src/data/products.json'
 
 products = []
+seen_ids = set()
 
 with open(csv_file_path, mode='r', encoding='utf-8-sig') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         # Map CSV fields to JSON structure
+        product_id = row['品番']
+        if product_id in seen_ids:
+            continue
+        seen_ids.add(product_id)
+
         product = {
-            "id": row['品番'],
+            "id": product_id,
             "name": row['品名'],
             "category": row['車型'], # Assuming '車型' is a good category, or maybe '客戶'
             "description": f"{row['品名']} for {row['車型']}", # Generating a description

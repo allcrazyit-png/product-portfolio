@@ -770,7 +770,7 @@
     "status": "Production",
     "specs": {
       "weight": "332g±5g",
-      "material": "FTP30DY-202B ",
+      "material": "FTP30DY-202B",
       "machine": "550T (501機)",
       "ct_time": "57",
       "mold_maker": "源達",
@@ -794,7 +794,7 @@
     ],
     "tags": [
       "JS",
-      "FTP30DY-202B "
+      "FTP30DY-202B"
     ]
   },
   {
@@ -3262,35 +3262,6 @@
     ],
     "tags": [
       "TT1",
-      ""
-    ]
-  },
-  {
-    "id": "CW788611",
-    "name": "鼓風機飾蓋",
-    "category": "JS",
-    "description": "鼓風機飾蓋 for JS",
-    "image": "CW788611_main.jpg",
-    "status": "Production",
-    "specs": {},
-    "qc_points": [],
-    "history": "",
-    "documents": [
-      {
-        "type": "SOP",
-        "url": "CW788611_qc2.pdf"
-      },
-      {
-        "type": "QC",
-        "url": "CW788611_qc3.pdf"
-      },
-      {
-        "type": "Conditions",
-        "url": "CW788611_qc1.pdf"
-      }
-    ],
-    "tags": [
-      "JS",
       ""
     ]
   },
