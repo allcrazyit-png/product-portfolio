@@ -63,7 +63,7 @@ function App() {
                     </div>
 
                     {/* Categories */}
-                    <div className="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar mask-gradient-x">
+                    <div className="flex flex-wrap items-center gap-2 py-4">
                         <Filter size={16} className="text-gray-400 shrink-0 ml-1" />
                         <motion.button
                             onTap={() => setSelectedCategory(null)}
