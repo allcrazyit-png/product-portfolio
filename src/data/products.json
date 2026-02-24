@@ -1,9 +1,9 @@
 [
   {
     "id": "G92D1-VU010",
-    "name": "DUCT, HV BATTERY INTAKE",
+    "name": "電池進氣管",
     "category": "841W",
-    "description": "DUCT, HV BATTERY INTAKE for 841W",
+    "description": "電池進氣管 for 841W",
     "image": "G92D1-VU010_main.jpg",
     "status": "Production",
     "specs": {
@@ -131,9 +131,10 @@
     "image": "67750-vu010_main.jpg",
     "status": "Production",
     "specs": {
+      "weight": "2040g±45g",
       "material": "CN-BP7SYTW",
       "machine": "2700T (312機)",
-      "ct_time": "60",
+      "ct_time": "80",
       "mold_maker": "博盛頓",
       "post_process": "有",
       "capacity": "8",
@@ -164,9 +165,9 @@
   },
   {
     "id": "67761-VU010",
-    "name": "",
+    "name": "COVER, BACK DOOR TRIM",
     "category": "841W",
-    "description": " for 841W",
+    "description": "COVER, BACK DOOR TRIM for 841W",
     "image": "67761-VU010_main.jpg",
     "status": "Production",
     "specs": {
@@ -281,6 +282,7 @@
       "weight": "1780g±40g",
       "material": "APIP5G-202B",
       "machine": "2700T (312機)",
+      "ct_time": "80",
       "mold_maker": "巨達",
       "post_process": "無",
       "capacity": "3",
@@ -318,6 +320,7 @@
       "weight": "339g±3g",
       "material": "TT935N1J",
       "machine": "450T (502機)",
+      "ct_time": "72",
       "mold_maker": "祐振",
       "post_process": "無",
       "capacity": "6",
@@ -355,6 +358,7 @@
       "weight": "130g±8g",
       "material": "APIP5G-202B",
       "machine": "550T (501機)",
+      "ct_time": "50",
       "mold_maker": "和成",
       "monthly_demand": "4166"
     },
@@ -390,6 +394,7 @@
       "weight": "283g±16g",
       "material": "APIP5G-202B",
       "machine": "800T (102機)",
+      "ct_time": "60",
       "mold_maker": "祥興",
       "monthly_demand": "4166"
     },
@@ -415,16 +420,17 @@
     ]
   },
   {
-    "id": "624511_2-VU010",
+    "id": "62451_2-VU010",
     "name": "天井側邊飾板右(左)",
     "category": "841W",
     "description": "天井側邊飾板右(左) for 841W",
-    "image": "624511_2-VU010_main.jpg",
+    "image": "62451_2-VU010_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "154g±6g",
       "material": "CN-BP1TW-202B",
       "machine": "550T (501機)",
+      "ct_time": "50",
       "mold_maker": "岡峰",
       "capacity": "7",
       "monthly_demand": "4166"
@@ -434,15 +440,15 @@
     "documents": [
       {
         "type": "SOP",
-        "url": "624511_2-VU010_qc2.pdf"
+        "url": "62451_2-VU010_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "624511_2-VU010_qc3.pdf"
+        "url": "62451_2-VU010_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "624511_2-VU010_qc1.pdf"
+        "url": "62451_2-VU010_qc1.pdf"
       }
     ],
     "tags": [
@@ -451,16 +457,17 @@
     ]
   },
   {
-    "id": "67917_8-VU010",
-    "name": "",
+    "id": "67917_8-VU010-1",
+    "name": "腳踏板RH/LH",
     "category": "841W",
-    "description": " for 841W",
-    "image": "67917_8-VU010_main.jpg",
+    "description": "腳踏板RH/LH for 841W",
+    "image": "67917_8-VU010-1_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "655g±10g",
       "material": "FTP20DY-202B",
       "machine": "800T (102機)",
+      "ct_time": "72",
       "mold_maker": "富項",
       "monthly_demand": "4166"
     },
@@ -469,15 +476,15 @@
     "documents": [
       {
         "type": "SOP",
-        "url": "67917_8-VU010_qc2.pdf"
+        "url": "67917_8-VU010-1_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "67917_8-VU010_qc3.pdf"
+        "url": "67917_8-VU010-1_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "67917_8-VU010_qc1.pdf"
+        "url": "67917_8-VU010-1_qc1.pdf"
       }
     ],
     "tags": [
@@ -487,15 +494,16 @@
   },
   {
     "id": "71139-VU010",
-    "name": "",
+    "name": "右前排座椅飾蓋",
     "category": "841W",
-    "description": " for 841W",
+    "description": "右前排座椅飾蓋 for 841W",
     "image": "71139-VU010_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "548g±10g",
       "material": "FTP20DY-202B",
       "machine": "600T (機)",
+      "ct_time": "60",
       "mold_maker": "嘉泰",
       "capacity": "6",
       "monthly_demand": "4166"
@@ -523,15 +531,16 @@
   },
   {
     "id": "71149-VU010",
-    "name": "",
+    "name": "左前排座椅飾蓋",
     "category": "841W",
-    "description": " for 841W",
+    "description": "左前排座椅飾蓋 for 841W",
     "image": "71149-VU010_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "626g±15g",
       "material": "FTP20DY-202B",
       "machine": "600T (機)",
+      "ct_time": "60",
       "mold_maker": "嘉泰",
       "capacity": "6",
       "monthly_demand": "4166"
@@ -568,6 +577,7 @@
       "weight": "RH:310g±6g\nLH:345g±6g",
       "material": "FTP20PDY-202B",
       "machine": "800T (102機)",
+      "ct_time": "65",
       "mold_maker": "源達",
       "capacity": "5",
       "monthly_demand": "4166"
@@ -604,6 +614,7 @@
       "weight": "1190g±10g",
       "material": "PX18-X02",
       "machine": "2200T (221機)",
+      "ct_time": "75",
       "mold_maker": "博盛頓",
       "monthly_demand": "4166"
     },
@@ -639,6 +650,7 @@
       "weight": "1310g±10g",
       "material": "TA42C-X01",
       "machine": "1500T (152機)",
+      "ct_time": "75",
       "mold_maker": "博盛頓",
       "monthly_demand": "4166"
     },
@@ -664,13 +676,18 @@
     ]
   },
   {
-    "id": "76911_2-VU010",
-    "name": "",
+    "id": "76911_2-VU010-1",
+    "name": "前葉子板擋泥板",
     "category": "841W",
-    "description": " for 841W",
-    "image": "76911_2-VU010_main.jpg",
+    "description": "前葉子板擋泥板 for 841W",
+    "image": "76911_2-VU010-1_main.jpg",
     "status": "Production",
     "specs": {
+      "weight": "98g±3g",
+      "material": "KZBP7-8-11BK03",
+      "machine": "400T(401機)",
+      "ct_time": "50",
+      "mold_maker": "源達",
       "monthly_demand": "4166"
     },
     "qc_points": [],
@@ -678,30 +695,35 @@
     "documents": [
       {
         "type": "SOP",
-        "url": "76911_2-VU010_qc2.pdf"
+        "url": "76911_2-VU010-1_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "76911_2-VU010_qc3.pdf"
+        "url": "76911_2-VU010-1_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "76911_2-VU010_qc1.pdf"
+        "url": "76911_2-VU010-1_qc1.pdf"
       }
     ],
     "tags": [
       "841W",
-      ""
+      "KZBP7-8-11BK03"
     ]
   },
   {
-    "id": "76917_8-VU010",
-    "name": "",
+    "id": "76917_8-VU010-1",
+    "name": "後葉子板擋泥板",
     "category": "841W",
-    "description": " for 841W",
-    "image": "76917_8-VU010_main.jpg",
+    "description": "後葉子板擋泥板 for 841W",
+    "image": "76917_8-VU010-1_main.jpg",
     "status": "Production",
     "specs": {
+      "weight": "80g±3g",
+      "material": "KZBP7-8-11BK03",
+      "machine": "400T(401機)",
+      "ct_time": "50",
+      "mold_maker": "源達",
       "monthly_demand": "4166"
     },
     "qc_points": [],
@@ -709,33 +731,34 @@
     "documents": [
       {
         "type": "SOP",
-        "url": "76917_8-VU010_qc2.pdf"
+        "url": "76917_8-VU010-1_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "76917_8-VU010_qc3.pdf"
+        "url": "76917_8-VU010-1_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "76917_8-VU010_qc1.pdf"
+        "url": "76917_8-VU010-1_qc1.pdf"
       }
     ],
     "tags": [
       "841W",
-      ""
+      "KZBP7-8-11BK03"
     ]
   },
   {
     "id": "79236_46-VU020_10",
-    "name": "",
+    "name": "後座椅腳座飾蓋",
     "category": "841W",
-    "description": " for 841W",
+    "description": "後座椅腳座飾蓋 for 841W",
     "image": "79236_46-VU020_10_main.jpg",
     "status": "Production",
     "specs": {
       "weight": "202g±5g",
       "material": "FTP20DY",
       "machine": "800T (102機)",
+      "ct_time": "60",
       "mold_maker": "源達",
       "capacity": "6",
       "monthly_demand": "4166"
@@ -770,7 +793,7 @@
     "status": "Production",
     "specs": {
       "weight": "332g±5g",
-      "material": "FTP30DY-202B",
+      "material": "FTP30DY-202B ",
       "machine": "550T (501機)",
       "ct_time": "57",
       "mold_maker": "源達",
@@ -794,7 +817,7 @@
     ],
     "tags": [
       "JS",
-      "FTP30DY-202B"
+      "FTP30DY-202B "
     ]
   },
   {
@@ -807,7 +830,8 @@
     "specs": {
       "weight": "1120g±50g",
       "material": "KZBP7-8-11BK10",
-      "machine": "2700T(312機)"
+      "machine": "2700T(312機)",
+      "mold_maker": "具達"
     },
     "qc_points": [],
     "history": "",
@@ -837,7 +861,12 @@
     "description": "輪弧 for D46H",
     "image": "75611_2-BZ140_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "355g±15g",
+      "material": "KZBP7-8-11BK10",
+      "machine": "1500T(151機)",
+      "mold_maker": "源達"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -856,7 +885,7 @@
     ],
     "tags": [
       "D46H",
-      ""
+      "KZBP7-8-11BK10"
     ]
   },
   {
@@ -866,7 +895,12 @@
     "description": "尾翼上蓋 for D46H",
     "image": "76871-BZ550_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "950g±10g",
+      "material": "PA777D",
+      "machine": "1500T (152機)",
+      "mold_maker": "源達"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -885,7 +919,7 @@
     ],
     "tags": [
       "D46H",
-      ""
+      "PA777D"
     ]
   },
   {
@@ -895,7 +929,12 @@
     "description": "尾翼下蓋 for D46H",
     "image": "76876-BZ030_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "1150g±10g",
+      "material": "AXAR187",
+      "machine": "1500T(151機)",
+      "mold_maker": "源達"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -914,7 +953,7 @@
     ],
     "tags": [
       "D46H",
-      ""
+      "AXAR187"
     ]
   },
   {
@@ -927,7 +966,8 @@
     "specs": {
       "weight": "279g±6g",
       "material": "APIP5G-202B",
-      "machine": "550T(503機)"
+      "machine": "550T(503機)",
+      "mold_maker": "廣一"
     },
     "qc_points": [],
     "history": "",
@@ -957,7 +997,13 @@
     "description": "安全氣囊 for D46H",
     "image": "55514-BZ070_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "362g±3g",
+      "material": "TT935N1J",
+      "machine": "450T (502機)",
+      "ct_time": "65",
+      "mold_maker": "祐振"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -976,7 +1022,7 @@
     ],
     "tags": [
       "D46H",
-      ""
+      "TT935N1J"
     ]
   },
   {
@@ -986,7 +1032,9 @@
     "description": "側裙配件 for D46H",
     "image": "65631_2-BZ090_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "mold_maker": "祐振"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1015,7 +1063,9 @@
     "description": "門把 for D46H",
     "image": "74645_6-BZ240_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "mold_maker": "岡峰"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1044,7 +1094,9 @@
     "description": "蓋子 for D46H",
     "image": "55442-BZ060_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "mold_maker": "廣一"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1076,7 +1128,8 @@
     "specs": {
       "weight": "54g±3g",
       "material": "APIP5G-202B",
-      "machine": "220T(213機)"
+      "machine": "220T(213機)",
+      "mold_maker": "廣一"
     },
     "qc_points": [],
     "history": "",
@@ -1135,7 +1188,11 @@
     "description": "前下巴 for 764W",
     "image": "52111-YY020-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "516g±6g",
+      "material": "KZBP7-8 11BK10",
+      "machine": "1500T(152機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1154,7 +1211,7 @@
     ],
     "tags": [
       "764W",
-      ""
+      "KZBP7-8 11BK10"
     ]
   },
   {
@@ -1197,7 +1254,11 @@
     "description": "尾門蓋板 for 764W",
     "image": "64716-0A020_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "615g±5g",
+      "material": "FTP30DY-202B",
+      "machine": "600T(601機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1216,7 +1277,7 @@
     ],
     "tags": [
       "764W",
-      ""
+      "FTP30DY-202B"
     ]
   },
   {
@@ -1226,7 +1287,11 @@
     "description": "尾門上飾板 for 764W",
     "image": "64790-0A050_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "一穴：322±3g\n二穴：318±3g",
+      "material": "APIP5G-202B",
+      "machine": "600T(601機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1245,7 +1310,7 @@
     ],
     "tags": [
       "764W",
-      ""
+      "APIP5G-202B"
     ]
   },
   {
@@ -1317,7 +1382,11 @@
     "description": "前下巴 for 976W",
     "image": "52111-0A160-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "543g±5g",
+      "material": "CN-BP7SYTW-11BK10",
+      "machine": "1500T(152機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1336,7 +1405,7 @@
     ],
     "tags": [
       "976W",
-      ""
+      "CN-BP7SYTW-11BK10"
     ]
   },
   {
@@ -1349,7 +1418,7 @@
     "specs": {
       "weight": "690g±10g",
       "material": "CN-BP7SYTW-11BK10",
-      "machine": "1500T(151機)"
+      "machine": "1500T(152機)"
     },
     "qc_points": [],
     "history": "",
@@ -1402,13 +1471,81 @@
     ]
   },
   {
+    "id": "554B1-02090-1",
+    "name": "護蓋(框)",
+    "category": "198D",
+    "description": "護蓋(框) for 198D",
+    "image": "554B1-02090-1_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "554B1-02090-1_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "554B1-02090-1_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "554B1-02090-1_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "198D",
+      ""
+    ]
+  },
+  {
+    "id": "55411-02E10",
+    "name": "儀表護蓋",
+    "category": "198D",
+    "description": "儀表護蓋 for 198D",
+    "image": "55411-02E10_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "227g±3g",
+      "material": "APIP5G-202B",
+      "machine": "550T(502機)",
+      "ct_time": "55",
+      "mold_maker": "必紘"
+    },
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "55411-02E10_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "55411-02E10_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "55411-02E10_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "198D",
+      "APIP5G-202B"
+    ]
+  },
+  {
     "id": "75851_2-02300",
     "name": "側裙",
     "category": "718W",
     "description": "側裙 for 718W",
     "image": "75851_2-02300_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "RH:1668±25g\nLH:1680±25g",
+      "material": "KZBP7-8-R1G3",
+      "machine": "2700T(312機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1422,12 +1559,12 @@
       },
       {
         "type": "Conditions",
-        "url": "75851_2-02300_qc1.pdf"
+        "url": "75851_2-02300_qc1.jpg"
       }
     ],
     "tags": [
       "718W",
-      ""
+      "KZBP7-8-R1G3"
     ]
   },
   {
@@ -1548,9 +1685,9 @@
   },
   {
     "id": "55313-02340",
-    "name": "(IP無孔",
+    "name": "IP無孔",
     "category": "718W",
-    "description": "(IP無孔 for 718W",
+    "description": "IP無孔 for 718W",
     "image": "55313-02340_main.jpg",
     "status": "Production",
     "specs": {},
@@ -1582,7 +1719,11 @@
     "description": "公文箱 for 718W",
     "image": "55433-02620-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "890g±15g",
+      "material": "TSM56008G-5AL",
+      "machine": "1500T(152機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1596,12 +1737,12 @@
       },
       {
         "type": "Conditions",
-        "url": "55433-02620-1_qc1.pdf"
+        "url": "55433-02620-1_qc1.jpg"
       }
     ],
     "tags": [
       "718W",
-      ""
+      "TSM56008G-5AL"
     ]
   },
   {
@@ -1698,7 +1839,11 @@
     "description": "車身號碼飾板 for 718W",
     "image": "58569-02140_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "30g±1g",
+      "material": "FTP20DY-202B",
+      "machine": "210T(213機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1717,7 +1862,7 @@
     ],
     "tags": [
       "718W",
-      ""
+      "FTP20DY-202B"
     ]
   },
   {
@@ -1727,7 +1872,11 @@
     "description": "框 for 718W",
     "image": "554B1-02160_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "20g±1g",
+      "material": "PA-777D",
+      "machine": "400T(401機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1746,7 +1895,7 @@
     ],
     "tags": [
       "718W",
-      ""
+      "PA-777D"
     ]
   },
   {
@@ -1803,7 +1952,7 @@
       },
       {
         "type": "Conditions",
-        "url": "55411-02B90_qc1.pdf"
+        "url": "55411-02B90_qc1.jpg"
       }
     ],
     "tags": [
@@ -1818,7 +1967,11 @@
     "description": "擋泥板 for 718W",
     "image": "53827_8-02280-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "98g±2g",
+      "material": "KZBP7-8-R1G3",
+      "machine": "550T(501機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -1832,12 +1985,12 @@
       },
       {
         "type": "Conditions",
-        "url": "53827_8-02280-1_qc1.pdf"
+        "url": "53827_8-02280-1_qc1.jpg"
       }
     ],
     "tags": [
       "718W",
-      ""
+      "KZBP7-8-R1G3"
     ]
   },
   {
@@ -2253,7 +2406,11 @@
     "description": "杯墊(小耳朵) for 681W",
     "image": "58916-0D150_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "15g±2g",
+      "material": "A7180-LJ",
+      "machine": "220T(213機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2272,7 +2429,7 @@
     ],
     "tags": [
       "681W",
-      ""
+      "A7180-LJ"
     ]
   },
   {
@@ -2398,7 +2555,11 @@
     "description": "小翅膀RH/LH for 681W",
     "image": "58911_2-0D430_070-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "32g±2g",
+      "material": "P-20-201B(B-0074)",
+      "machine": "550T(501機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2417,7 +2578,7 @@
     ],
     "tags": [
       "681W",
-      ""
+      "P-20-201B(B-0074)"
     ]
   },
   {
@@ -2566,61 +2727,73 @@
     ]
   },
   {
-    "id": "80870_1-BA100",
+    "id": "80870_1-BA100-1",
     "name": "前門飾板",
     "category": "D21",
     "description": "前門飾板 for D21",
-    "image": "80870_1-BA100_main.jpg",
+    "image": "80870_1-BA100-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "158g±10g",
+      "material": "CN-BP7SYTW-R1G3(九睿抽色155727-L)",
+      "machine": "800T(102機)",
+      "ct_time": "70",
+      "mold_maker": "嘉泰"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
       {
         "type": "SOP",
-        "url": "80870_1-BA100_qc2.pdf"
+        "url": "80870_1-BA100-1_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "80870_1-BA100_qc3.pdf"
+        "url": "80870_1-BA100-1_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "80870_1-BA100_qc1.pdf"
+        "url": "80870_1-BA100-1_qc1.pdf"
       }
     ],
     "tags": [
       "D21",
-      ""
+      "CN-BP7SYTW-R1G3(九睿抽色155727-L)"
     ]
   },
   {
-    "id": "82870_1-BA100",
+    "id": "82870_1-BA100-1",
     "name": "後門飾板",
     "category": "D21",
     "description": "後門飾板 for D21",
-    "image": "82870_1-BA100_main.jpg",
+    "image": "82870_1-BA100-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "180g±10g",
+      "material": "CN-BP7SYTW-R1G3(九睿抽色155727-L)",
+      "machine": "800T(102機)",
+      "ct_time": "70",
+      "mold_maker": "嘉泰"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
       {
         "type": "SOP",
-        "url": "82870_1-BA100_qc2.pdf"
+        "url": "82870_1-BA100-1_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "82870_1-BA100_qc3.pdf"
+        "url": "82870_1-BA100-1_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "82870_1-BA100_qc1.pdf"
+        "url": "82870_1-BA100-1_qc1.pdf"
       }
     ],
     "tags": [
       "D21",
-      ""
+      "CN-BP7SYTW-R1G3(九睿抽色155727-L)"
     ]
   },
   {
@@ -2659,7 +2832,11 @@
     "description": "輪弧RH/LH for P02F",
     "image": "63810_1-2YK0A_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "374g±10g",
+      "material": "14071-2(KZBP7-8振揮抽色)",
+      "machine": "2200T(221機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2678,7 +2855,7 @@
     ],
     "tags": [
       "P02F",
-      ""
+      "14071-2(KZBP7-8振揮抽色)"
     ]
   },
   {
@@ -2688,7 +2865,11 @@
     "description": "前門門板RH/LH for P02F",
     "image": "8000_2-NA034A-00_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "365g ± 6g ",
+      "material": "KZBP7-8-R1G3",
+      "machine": "800T(101機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2702,12 +2883,12 @@
       },
       {
         "type": "Conditions",
-        "url": "8000_2-NA034A-00_qc1.pdf"
+        "url": "8000_2-NA034A-00_qc1.jpg"
       }
     ],
     "tags": [
       "P02F",
-      ""
+      "KZBP7-8-R1G3"
     ]
   },
   {
@@ -2731,7 +2912,7 @@
       },
       {
         "type": "Conditions",
-        "url": "8013_2-5RT0A_qc1.pdf"
+        "url": "8013_2-5RT0A_qc1.jpg"
       }
     ],
     "tags": [
@@ -2746,7 +2927,11 @@
     "description": "後門門板RH/LH for P02F",
     "image": "8004_6-NA034A-00_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "293g ± 5g ",
+      "material": "KZBP7-8-R1G3",
+      "machine": "800T(101機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2760,12 +2945,12 @@
       },
       {
         "type": "Conditions",
-        "url": "8004_6-NA034A-00_qc1.pdf"
+        "url": "8004_6-NA034A-00_qc1.jpg"
       }
     ],
     "tags": [
       "P02F",
-      ""
+      "KZBP7-8-R1G3"
     ]
   },
   {
@@ -2789,7 +2974,7 @@
       },
       {
         "type": "Conditions",
-        "url": "8014_5-5RT0A_qc1.pdf"
+        "url": "8014_5-5RT0A_qc1.jpg"
       }
     ],
     "tags": [
@@ -2818,7 +3003,7 @@
       },
       {
         "type": "Conditions",
-        "url": "78126_7-5RT1A-1_qc1.pdf"
+        "url": "78126_7-5RT1A-1_qc1.jpg"
       }
     ],
     "tags": [
@@ -2833,7 +3018,13 @@
     "description": "後下保飾蓋 for P33A",
     "image": "85084-6RX0A_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "1420g+20g-10g",
+      "material": "ARM-3313-0CUV",
+      "machine": "2200T(221機)",
+      "ct_time": "75",
+      "mold_maker": "源達"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2852,7 +3043,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "ARM-3313-0CUV"
     ]
   },
   {
@@ -2862,7 +3053,12 @@
     "description": "前門門板RH/LH for P33A",
     "image": "80870_1-6RX0A-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "material": "14071-2(KZBP7-8振揮抽色)",
+      "machine": "1500T(151機)",
+      "ct_time": "70",
+      "mold_maker": "源達"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2881,7 +3077,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "14071-2(KZBP7-8振揮抽色)"
     ]
   },
   {
@@ -2891,7 +3087,12 @@
     "description": "後門門板RH/LH for P33A",
     "image": "82870_1-6RX0A-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "material": "14071-2(KZBP7-8振揮抽色)",
+      "machine": "800T(102機)",
+      "ct_time": "65",
+      "mold_maker": "岡峰"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2910,7 +3111,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "14071-2(KZBP7-8振揮抽色)"
     ]
   },
   {
@@ -2920,7 +3121,12 @@
     "description": "後後輪弧RH/LH for P33A",
     "image": "78872_3-6RA0A-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "material": "14071-2(KZBP7-8振揮抽色)",
+      "machine": "800T(102機)",
+      "ct_time": "60",
+      "mold_maker": "必紘"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2939,7 +3145,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "14071-2(KZBP7-8振揮抽色)"
     ]
   },
   {
@@ -2949,7 +3155,12 @@
     "description": "後前輪弧RH/LH for P33A",
     "image": "78860_1-6RA0A-1_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "material": "14071-2(KZBP7-8振揮抽色)",
+      "machine": "800T(102機)",
+      "ct_time": "60",
+      "mold_maker": "必紘"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2968,7 +3179,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "14071-2(KZBP7-8振揮抽色)"
     ]
   },
   {
@@ -2978,7 +3189,13 @@
     "description": "拖車勾蓋 for P33A",
     "image": "85010-6RX0A_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "18g±2g",
+      "material": "ARM-3313-0CUV",
+      "machine": "210T(213機)",
+      "ct_time": "50",
+      "mold_maker": "山億"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -2997,7 +3214,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "ARM-3313-0CUV"
     ]
   },
   {
@@ -3007,7 +3224,13 @@
     "description": "電池蓋 for P33A",
     "image": "24345-6RA0B_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "一穴：27g±2g\n二穴：11g±1g",
+      "material": "3084H-RED",
+      "machine": "210T(213機)",
+      "ct_time": "50",
+      "mold_maker": "山億"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -3026,7 +3249,7 @@
     ],
     "tags": [
       "P33A",
-      ""
+      "3084H-RED"
     ]
   },
   {
@@ -3069,7 +3292,11 @@
     "description": "儀錶板配件 for DE",
     "image": "CW777509_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "585g±9g",
+      "material": "125967-1",
+      "machine": "800T(101機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -3083,41 +3310,45 @@
       },
       {
         "type": "Conditions",
-        "url": "CW777509_qc1.pdf"
+        "url": "CW777509_qc1.ipg"
       }
     ],
     "tags": [
       "DE",
-      ""
+      "125967-1"
     ]
   },
   {
-    "id": "CW777525_26",
+    "id": "CW777526_25",
     "name": "出風口配件",
     "category": "DE",
     "description": "出風口配件 for DE",
     "image": "CW777525_26_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "RH:20g±1g\nLH:23g±1g",
+      "material": "152967-L",
+      "machine": "210T(213機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
       {
         "type": "SOP",
-        "url": "CW777525_26_qc2.pdf"
+        "url": "CW777526_25_qc2.pdf"
       },
       {
         "type": "QC",
-        "url": "CW777525_26_qc3.pdf"
+        "url": "CW777526_25_qc3.pdf"
       },
       {
         "type": "Conditions",
-        "url": "CW777525_26_qc1.pdf"
+        "url": "CW777526_25_qc1.jpg"
       }
     ],
     "tags": [
       "DE",
-      ""
+      "152967-L"
     ]
   },
   {
@@ -3272,7 +3503,11 @@
     "description": "A柱RH/LH for AST",
     "image": "CW785401_2XA_main.jpg",
     "status": "Production",
-    "specs": {},
+    "specs": {
+      "weight": "180g±7g",
+      "material": "P6211TR-CMX20005",
+      "machine": "600T(601機)"
+    },
     "qc_points": [],
     "history": "",
     "documents": [
@@ -3291,6 +3526,656 @@
     ],
     "tags": [
       "AST",
+      "P6211TR-CMX20005"
+    ]
+  },
+  {
+    "id": "6512A421_2-1",
+    "name": "側裙",
+    "category": "RE",
+    "description": "側裙 for RE",
+    "image": "6512A421_2-1_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "1470±20g",
+      "material": "P0213GNB02",
+      "machine": "2700T(312機)"
+    },
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "6512A421_2-1_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "6512A421_2-1_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "6512A421_2-1_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "RE",
+      "P0213GNB02"
+    ]
+  },
+  {
+    "id": "6512A421_2-A",
+    "name": "側裙配件",
+    "category": "RE",
+    "description": "側裙配件 for RE",
+    "image": "6512A421_2-A_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "6512A421_2-A_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "6512A421_2-A_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "6512A421_2-A_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "RE",
+      ""
+    ]
+  },
+  {
+    "id": "7405A476",
+    "name": "雨刷座",
+    "category": "RE",
+    "description": "雨刷座 for RE",
+    "image": "7405A476_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "7405A476_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "7405A476_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "7405A476_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "RE",
+      ""
+    ]
+  },
+  {
+    "id": "7405A525_6",
+    "name": "雨刷座配件",
+    "category": "RE",
+    "description": "雨刷座配件 for RE",
+    "image": "7405A525_6_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "7405A525_6_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "7405A525_6_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "7405A525_6_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "RE",
+      ""
+    ]
+  },
+  {
+    "id": "CW769614-A",
+    "name": "後側背板",
+    "category": "TD-LIFT",
+    "description": "後側背板 for TD-LIFT",
+    "image": "CW769614-A_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "1425g±70 g",
+      "material": "PT010AM8600-02",
+      "machine": "2200T(221機)"
+    },
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "CW769614-A_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "CW769614-A_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "CW769614-A_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "TD-LIFT",
+      "PT010AM8600-02"
+    ]
+  },
+  {
+    "id": "CW769960_1-A",
+    "name": "B柱-LH/RH",
+    "category": "TD-LIFT",
+    "description": "B柱-LH/RH for TD-LIFT",
+    "image": "CW769960_1-A_main.jpg",
+    "status": "Production",
+    "specs": {
+      "weight": "LH:423±24g\nRH:438±24g",
+      "material": "PTR020B-CTH20001",
+      "machine": "1500T(152機)"
+    },
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "CW769960_1-A_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "CW769960_1-A_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "CW769960_1-A_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "TD-LIFT",
+      "PTR020B-CTH20001"
+    ]
+  },
+  {
+    "id": "L5G-F470E-00",
+    "name": "大底板",
+    "category": "L5G",
+    "description": "大底板 for L5G",
+    "image": "L5G-F470E-00_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "L5G-F470E-00_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "L5G-F470E-00_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "L5G-F470E-00_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "L5G",
+      ""
+    ]
+  },
+  {
+    "id": "L5G-F470E-10",
+    "name": "小背靠",
+    "category": "L5G",
+    "description": "小背靠 for L5G",
+    "image": "L5G-F470E-10_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "L5G-F470E-10_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "L5G-F470E-10_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "L5G-F470E-10_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "L5G",
+      ""
+    ]
+  },
+  {
+    "id": "84610-3A0-A010-27_8",
+    "name": "掛勾-RH/LH",
+    "category": "3A0A",
+    "description": "掛勾-RH/LH for 3A0A",
+    "image": "84610-3A0-A010-27_8_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "84610-3A0-A010-27_8_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "84610-3A0-A010-27_8_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "84610-3A0-A010-27_8_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "3A0A",
+      ""
+    ]
+  },
+  {
+    "id": "84610-3A0-A210-21",
+    "name": "音響網",
+    "category": "3A0A",
+    "description": "音響網 for 3A0A",
+    "image": "84610-3A0-A210-21_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "84610-3A0-A210-21_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "84610-3A0-A210-21_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "84610-3A0-A210-21_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "3A0A",
+      ""
+    ]
+  },
+  {
+    "id": "84661-3A0-A010-M1",
+    "name": "油箱蓋",
+    "category": "3A0A",
+    "description": "油箱蓋 for 3A0A",
+    "image": "84661-3A0-A010-M1_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "84661-3A0-A010-M1_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "84661-3A0-A010-M1_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "84661-3A0-A010-M1_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "3A0A",
+      ""
+    ]
+  },
+  {
+    "id": "BW753231",
+    "name": "後擋泥板",
+    "category": "EZ2",
+    "description": "後擋泥板 for EZ2",
+    "image": "BW753231_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW753231_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW753231_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW753231_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EZ2",
+      ""
+    ]
+  },
+  {
+    "id": "BW753076",
+    "name": "前擋泥板",
+    "category": "EZ2",
+    "description": "前擋泥板 for EZ2",
+    "image": "BW753076_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW753076_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW753076_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW753076_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EZ2",
+      ""
+    ]
+  },
+  {
+    "id": "65100-UE2-00",
+    "name": "底護蓋A",
+    "category": "UE2",
+    "description": "底護蓋A for UE2",
+    "image": "65100-UE2-00_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "65100-UE2-00_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "65100-UE2-00_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "65100-UE2-00_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "UE2",
+      ""
+    ]
+  },
+  {
+    "id": "65200-UE2-00",
+    "name": "底護蓋B",
+    "category": "UE2",
+    "description": "底護蓋B for UE2",
+    "image": "65200-UE2-00_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "65200-UE2-00_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "65200-UE2-00_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "65200-UE2-00_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "UE2",
+      ""
+    ]
+  },
+  {
+    "id": "65300_400-UE2-00",
+    "name": "車前右/左側底護蓋",
+    "category": "UE2",
+    "description": "車前右/左側底護蓋 for UE2",
+    "image": "65300_400-UE2-00_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "65300_400-UE2-00_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "65300_400-UE2-00_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "65300_400-UE2-00_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "UE2",
+      ""
+    ]
+  },
+  {
+    "id": "BW727997XA",
+    "name": "前內蓋(設變後)",
+    "category": "EM25",
+    "description": "前內蓋(設變後) for EM25",
+    "image": "BW727997XA_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW727997XA_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW727997XA_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW727997XA_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
+      ""
+    ]
+  },
+  {
+    "id": "BW725815_6",
+    "name": "",
+    "category": "EM25",
+    "description": " for EM25",
+    "image": "BW725815_6_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW725815_6_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW725815_6_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW725815_6_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
+      ""
+    ]
+  },
+  {
+    "id": "BW725757XA",
+    "name": "",
+    "category": "EM25",
+    "description": " for EM25",
+    "image": "BW725757XA_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW725757XA_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW725757XA_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW725757XA_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
+      ""
+    ]
+  },
+  {
+    "id": "BW725932",
+    "name": "",
+    "category": "EM25",
+    "description": " for EM25",
+    "image": "BW725932_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW725932_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW725932_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW725932_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
+      ""
+    ]
+  },
+  {
+    "id": "BW725928",
+    "name": "",
+    "category": "EM25",
+    "description": " for EM25",
+    "image": "BW725928_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW725928_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW725928_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW725928_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
+      ""
+    ]
+  },
+  {
+    "id": "BW725393_4-1",
+    "name": "車底前右/左飾蓋",
+    "category": "EM25",
+    "description": "車底前右/左飾蓋 for EM25",
+    "image": "BW725393_4-1_main.jpg",
+    "status": "Production",
+    "specs": {},
+    "qc_points": [],
+    "history": "",
+    "documents": [
+      {
+        "type": "SOP",
+        "url": "BW725393_4-1_qc2.pdf"
+      },
+      {
+        "type": "QC",
+        "url": "BW725393_4-1_qc3.pdf"
+      },
+      {
+        "type": "Conditions",
+        "url": "BW725393_4-1_qc1.pdf"
+      }
+    ],
+    "tags": [
+      "EM25",
       ""
     ]
   }
