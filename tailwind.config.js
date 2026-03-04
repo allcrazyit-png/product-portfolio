@@ -8,17 +8,21 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
+                display: ['Inter', 'sans-serif'],
             },
             colors: {
+                primary: {
+                    DEFAULT: "#137fec",
+                    light: "#e3f0fd",
+                    dark: "#0b5cb5",
+                },
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
-                primary: {
-                    DEFAULT: "hsl(var(--primary))",
-                    foreground: "hsl(var(--primary-foreground))",
-                },
                 secondary: {
                     DEFAULT: "hsl(var(--secondary))",
                     foreground: "hsl(var(--secondary-foreground))",

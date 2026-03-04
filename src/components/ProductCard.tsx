@@ -11,58 +11,48 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
     return (
         <motion.div
             layout
-            whileHover={{ y: -8, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+            whileHover={{ y: -4 }}
+            className="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300 flex flex-col cursor-pointer"
             onClick={() => onClick(product)}
         >
-            {/* Image Container */}
-            <div className="aspect-[4/3] bg-gray-100 dark:bg-zinc-800 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
                 {product.image ? (
                     <img
                         src={`assets/${product.image}`}
                         alt={product.name}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                        loading="lazy"
+                        className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                 ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
-                        <div className="w-12 h-12 rounded-2xl bg-white/50 dark:bg-black/20 flex items-center justify-center mb-2 backdrop-blur-sm">
-                            <span className="text-2xl opacity-50">📷</span>
-                        </div>
-                        <span className="text-xs font-medium opacity-50">No Image</span>
+                    <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 bg-slate-50 dark:bg-slate-800/50">
+                        <span className="material-symbols-outlined text-4xl opacity-20">image</span>
+                        <span className="text-[10px] mt-2 font-medium">NO IMAGE</span>
                     </div>
                 )}
-
-                {/* Floating Tags */}
-                <div className="absolute top-4 right-4 z-20">
-                    <span className="px-3 py-1.5 text-[10px] font-bold tracking-wider uppercase bg-white/90 dark:bg-black/80 text-gray-900 dark:text-white backdrop-blur-xl rounded-full shadow-sm">
-                        {product.category}
-                    </span>
+                <div className="absolute top-2 right-2">
+                    <span className="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/20 px-2 py-1 text-[10px] font-bold text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">有庫存</span>
                 </div>
             </div>
 
-            {/* Content Content */}
-            <div className="p-6">
-                <div className="mb-4">
-                    <p className="text-[10px] font-mono text-blue-600 dark:text-blue-400 font-bold tracking-wider mb-2 opacity-80">{product.id}</p>
-                    <h3 className="font-bold text-lg text-gray-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
-                        {product.name}
-                    </h3>
+            <div className="p-4 flex flex-col flex-1">
+                <div className="flex justify-between items-start mb-2">
+                    <p className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400">{product.id}</p>
+                    <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded whitespace-nowrap">
+                        {product.specs.material || '標準件'}
+                    </span>
                 </div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors line-clamp-1">
+                    {product.name}
+                </h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 font-medium">{product.category}</p>
 
-                <div className="flex flex-wrap gap-2">
-                    {product.tags.slice(0, 3).map((tag, i) => (
-                        <span key={i} className="text-[10px] px-2.5 py-1 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-300 rounded-full font-medium">
-                            {tag}
-                        </span>
-                    ))}
-                    {product.tags.length > 3 && (
-                        <span className="text-[10px] px-2.5 py-1 text-gray-400">
-                            +{product.tags.length - 3}
-                        </span>
-                    )}
+                <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+                        <span className="material-symbols-outlined text-sm">precision_manufacturing</span>
+                        <span>{product.specs.machine || '未指派'}</span>
+                    </div>
+                    <button className="text-primary hover:text-primary-dark p-1 rounded-full hover:bg-primary/5 transition-colors">
+                        <span className="material-symbols-outlined text-xl">arrow_forward</span>
+                    </button>
                 </div>
             </div>
         </motion.div>

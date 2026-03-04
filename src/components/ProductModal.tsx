@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, FileText, Scale, Settings, Truck, Zap } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Product } from '../types';
 
 interface ProductModalProps {
@@ -25,149 +25,136 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                         className="absolute inset-0 bg-background/80 backdrop-blur-md"
                     />
                     <motion.div
-                        initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 40, scale: 0.9 }}
-                        transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        className="relative w-full max-w-5xl bg-card rounded-[2rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col md:flex-row border border-white/10"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ type: "spring", damping: 20, stiffness: 200 }}
+                        className="relative z-20 w-full max-w-4xl bg-background-light dark:bg-background-dark rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <button
-                            onClick={onClose}
-                            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/20 text-white backdrop-blur-md hover:bg-black/40 transition-colors"
-                        >
-                            <X size={20} />
-                        </button>
+                        {/* Modal Header */}
+                        <div className="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-0 z-30">
+                            <div className="flex flex-col gap-1">
+                                <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                                    {product.name} <span className="text-slate-400 font-mono text-lg ml-2">#{product.id}</span>
+                                </h1>
+                                <div className="flex items-center gap-2">
+                                    <span className="inline-flex items-center rounded-full bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:text-emerald-400">
+                                        生產中
+                                    </span>
+                                    <span className="text-sm text-slate-500 dark:text-slate-400">分類：{product.category}</span>
+                                </div>
+                            </div>
+                            <button
+                                onClick={onClose}
+                                className="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-500 dark:text-slate-400"
+                            >
+                                <span className="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
 
-                        {/* Left: Image & Key Info */}
-                        <div className="w-full md:w-2/5 relative flex flex-col shrink-0">
-                            <div className="h-64 md:h-full relative overflow-hidden bg-black">
-                                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10" />
-                                {product.image ? (
-                                    <img
-                                        src={`assets/${product.image}`}
-                                        alt={product.name}
-                                        className="w-full h-full object-contain p-4"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-white/50 bg-secondary">
-                                        No Image
-                                    </div>
-                                )}
-                                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
-                                    <div className="inline-block px-3 py-1 mb-2 text-xs font-bold tracking-wider uppercase bg-primary text-white rounded-lg shadow-lg shadow-primary/20">
-                                        {product.category}
-                                    </div>
-                                    <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-1">{product.name}</h2>
-                                    <p className="text-white/70 font-mono text-sm">{product.id}</p>
+                        <div className="overflow-y-auto flex-1 p-6 sm:p-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                <div className="lg:col-span-2 space-y-8">
+                                    {/* Section 1: Specs */}
+                                    <section>
+                                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">precision_manufacturing</span>
+                                            生產規格
+                                        </h3>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 dark:bg-slate-700 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+                                            <SpecItem label="CT 時間" value={product.specs.ct_time} />
+                                            <SpecItem label="重量" value={product.specs.weight} />
+                                            <SpecItem label="原料編號" value={product.specs.material} isRawMaterial />
+                                            <SpecItem label="機台" value={product.specs.machine} isLink />
+                                            <SpecItem label="組裝時間" value={product.specs.assembly_time} />
+                                            <SpecItem label="模具廠商" value={product.specs.mold_maker} isLink />
+                                        </div>
+                                    </section>
+
+                                    {/* Section 2: Logistics */}
+                                    <section>
+                                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">inventory_2</span>
+                                            包裝物流
+                                        </h3>
+                                        <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-4 grid grid-cols-1 sm:grid-cols-2 gap-6 shadow-sm">
+                                            <LogisticsItem icon="box" label="出貨容器" value={product.specs.container} />
+                                            <LogisticsItem icon="widgets" label="收容數" value={product.specs.capacity} />
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div className="space-y-6">
+                                    {/* Section 3: Documents */}
+                                    <section>
+                                        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                            <span className="material-symbols-outlined text-primary">description</span>
+                                            技術文件
+                                        </h3>
+                                        <div className="flex flex-col gap-3">
+                                            {product.documents.map((doc, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={() => setPreviewDoc(doc.url)}
+                                                    className="group flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-primary hover:shadow-sm dark:hover:border-primary transition-all text-left"
+                                                >
+                                                    <div className={`h-10 w-10 rounded flex items-center justify-center shrink-0 ${doc.type.includes('PDF') ? 'bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400' : 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400'}`}>
+                                                        <span className="material-symbols-outlined">{doc.type.includes('PDF') ? 'picture_as_pdf' : 'article'}</span>
+                                                    </div>
+                                                    <div className="flex-1 min-w-0">
+                                                        <p className="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">{doc.type}</p>
+                                                        <p className="text-xs text-slate-500 dark:text-slate-400">點擊預覽文件</p>
+                                                    </div>
+                                                    <span className="material-symbols-outlined text-slate-400 group-hover:text-primary">visibility</span>
+                                                </button>
+                                            ))}
+                                            {product.documents.length === 0 && (
+                                                <div className="text-center py-6 border border-dashed border-slate-300 dark:border-slate-700 rounded-lg text-slate-500 text-sm">
+                                                    尚無相關文件
+                                                </div>
+                                            )}
+                                        </div>
+                                    </section>
+
+                                    {/* Section 4: Preview */}
+                                    <section>
+                                        <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-3 uppercase tracking-wider">部件預覽</h3>
+                                        <div className="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 group cursor-pointer shadow-sm">
+                                            {product.image ? (
+                                                <img
+                                                    src={`assets/${product.image}`}
+                                                    alt={product.name}
+                                                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                            ) : (
+                                                <div className="absolute inset-0 flex items-center justify-center">
+                                                    <span className="material-symbols-outlined text-6xl text-slate-300">image</span>
+                                                </div>
+                                            )}
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                                                <div className="bg-white/90 dark:bg-slate-900/90 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
+                                                    <span className="material-symbols-outlined text-slate-900 dark:text-white">zoom_in</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Right: Bento Grid Details */}
-                        <div className="w-full md:w-3/5 p-6 md:p-8 overflow-y-auto bg-background flex flex-col min-h-0">
-                            <div className="space-y-6 flex-1">
-
-                                {/* Section 1: Core Specs (Bento) */}
-                                <div>
-                                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">產品規格</h3>
-                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                                        <SpecBox icon={<Scale />} label="重量" value={product.specs.weight} />
-                                        <SpecBox icon={<Settings />} label="原料" value={product.specs.material} />
-                                        <SpecBox icon={<Zap />} label="機台" value={product.specs.machine} />
-                                        <SpecBox icon={<Truck />} label="廠商" value={product.specs.mold_maker} />
-                                    </div>
-                                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3">
-                                        <SpecBox icon={<Settings />} label="CT 時間" value={product.specs.ct_time} />
-                                        <SpecBox icon={<Settings />} label="組立時間" value={product.specs.assembly_time} />
-                                        <SpecBox icon={<Settings />} label="加工組立" value={product.specs.post_process} colSpan={2} />
-                                    </div>
-                                </div>
-
-                                {/* Section 2: Logistics */}
-                                <div>
-                                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">物流資訊</h3>
-                                    <div className="grid grid-cols-3 gap-3">
-                                        <div className="p-4 rounded-2xl bg-secondary/30 border border-secondary">
-                                            <div className="text-xs text-muted-foreground mb-1">容器</div>
-                                            <div className="font-semibold text-foreground">{product.specs.container || '-'}</div>
-                                        </div>
-                                        <div className="p-4 rounded-2xl bg-secondary/30 border border-secondary">
-                                            <div className="text-xs text-muted-foreground mb-1">收容數</div>
-                                            <div className="font-semibold text-foreground">{product.specs.capacity || '-'}</div>
-                                        </div>
-                                        <div className="p-4 rounded-2xl bg-secondary/30 border border-secondary">
-                                            <div className="text-xs text-muted-foreground mb-1">月需求</div>
-                                            <div className="font-semibold text-foreground">{product.specs.monthly_demand || '-'}</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Section 3: Critical Info & History */}
-                                <div className="grid gap-4">
-                                    {product.qc_points.length > 0 && (
-                                        <div className="p-5 rounded-2xl bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20">
-                                            <h4 className="flex items-center gap-2 font-bold text-red-600 dark:text-red-400 mb-3">
-                                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                                重點管制項目
-                                            </h4>
-                                            <ul className="space-y-2">
-                                                {product.qc_points.map((point, idx) => (
-                                                    <li key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
-                                                        <span className="mt-1.5 w-1 h-1 rounded-full bg-red-400 shrink-0" />
-                                                        {point}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-
-                                    {product.history && (
-                                        <div className="p-5 rounded-2xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-900/20">
-                                            <h4 className="flex items-center gap-2 font-bold text-orange-600 dark:text-orange-400 mb-2">
-                                                <div className="w-2 h-2 rounded-full bg-orange-500" />
-                                                歷史異常回溯
-                                            </h4>
-                                            <p className="text-sm text-foreground/80 leading-relaxed">{product.history}</p>
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Section 4: Documents */}
-                                <div>
-                                    <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-4">相關文件</h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        {product.documents.map((doc, idx) => (
-                                            <button
-                                                key={idx}
-                                                onClick={() => setPreviewDoc(doc.url)}
-                                                className="flex items-center justify-between p-4 rounded-xl bg-card border border-border hover:border-primary hover:bg-primary/5 transition-all group shadow-sm text-sm font-medium w-full text-left"
-                                            >
-                                                <span className="flex items-center gap-2">
-                                                    <FileText size={16} className="text-primary" />
-                                                    {doc.type}
-                                                </span>
-                                                <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                                            </button>
-                                        ))}
-                                        {product.documents.length === 0 && (
-                                            <div className="col-span-full text-center py-4 text-sm text-muted-foreground bg-secondary/20 rounded-xl border border-dashed border-secondary">
-                                                尚無相關文件
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Bottom Close Button */}
-                            <div className="mt-8 pt-6 border-t border-border/50">
-                                <button
-                                    onClick={onClose}
-                                    className="w-full py-3 rounded-xl bg-secondary hover:bg-secondary/80 text-secondary-foreground font-medium transition-colors"
-                                >
-                                    關閉
-                                </button>
-                            </div>
+                        {/* Modal Footer */}
+                        <div className="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex flex-col sm:flex-row justify-end gap-3">
+                            <button
+                                onClick={onClose}
+                                className="px-5 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            >
+                                關閉窗口
+                            </button>
+                            <button className="px-5 py-2.5 rounded-lg bg-primary text-white font-medium hover:bg-primary-dark transition-colors shadow-sm flex items-center justify-center gap-2">
+                                <span className="material-symbols-outlined text-[20px]">edit</span>
+                                編輯規格
+                            </button>
                         </div>
 
                         {/* Document Preview Modal */}
@@ -200,13 +187,27 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
     );
 };
 
-// Helper Component for Specs
-const SpecBox = ({ icon, label, value, colSpan = 1 }: { icon: React.ReactNode, label: string, value?: string, colSpan?: number }) => (
-    <div className={`p-3.5 rounded-2xl bg-secondary/50 border border-transparent hover:border-border transition-colors ${colSpan === 2 ? 'col-span-2' : ''}`}>
-        <div className="flex items-center gap-2 text-muted-foreground mb-1.5">
-            {React.cloneElement(icon as React.ReactElement, { size: 14 })}
-            <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
+// Helper Components
+const SpecItem = ({ label, value, isLink = false, isRawMaterial = false }: { label: string, value?: string, isLink?: boolean, isRawMaterial?: boolean }) => (
+    <div className="bg-white dark:bg-slate-800 p-4">
+        <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1">{label}</p>
+        <div className="flex items-center gap-2">
+            {isRawMaterial && <span className="h-2 w-2 rounded-full bg-blue-500 shadow-sm shadow-blue-500/50"></span>}
+            <p className={`text-sm font-bold ${isLink ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>
+                {value || '-'}
+            </p>
         </div>
-        <p className="font-semibold text-sm text-foreground break-words leading-snug" title={value}>{value || '-'}</p>
+    </div>
+);
+
+const LogisticsItem = ({ icon, label, value }: { icon: string, label: string, value?: string }) => (
+    <div className="flex items-start gap-4 p-2 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg">
+        <div className="h-10 w-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0 text-primary">
+            <span className="material-symbols-outlined">{icon}</span>
+        </div>
+        <div className="min-w-0">
+            <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">{label}</p>
+            <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 truncate">{value || '-'}</p>
+        </div>
     </div>
 );
