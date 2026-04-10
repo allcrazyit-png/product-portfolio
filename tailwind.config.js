@@ -7,17 +7,18 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                display: ['Inter', 'sans-serif'],
+                sans: ['"Noto Sans TC"', 'sans-serif'],
+                display: ['"Noto Sans TC"', 'sans-serif'],
+                mono: ['"JetBrains Mono"', 'monospace'],
             },
             colors: {
                 primary: {
-                    DEFAULT: "#137fec",
-                    light: "#e3f0fd",
-                    dark: "#0b5cb5",
+                    DEFAULT: "#d97706",
+                    light: "#fef3c7",
+                    dark: "#b45309",
                 },
-                "background-light": "#f6f7f8",
-                "background-dark": "#101922",
+                "background-light": "#f5f0eb",
+                "background-dark": "#0e1219",
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",

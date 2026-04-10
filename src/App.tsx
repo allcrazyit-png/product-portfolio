@@ -4,8 +4,7 @@ import { Loader2, AlertCircle, RefreshCw } from 'lucide-react';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
 import { Product } from './types';
-
-const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbx0ssjtKYrkeFPPDs34QR_5A4YPci_tbazOGvJs5VIZGxJs2WKHgaJXg2jJd87JmoEF6A/exec';
+import { supabase } from './lib/supabase';
 
 function App() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -20,11 +19,11 @@ function App() {
         setIsLoading(true);
         setError(null);
         try {
-            const response = await fetch(GAS_API_URL);
-            if (!response.ok) throw new Error('無法連線至雲端資料庫');
-            const data = await response.json();
-            // 去重處理，優先保留完整資料項目
-            const uniqueData = Array.from(new Map(data.map((item: Product) => [item.id, item])).values()) as Product[];
+            const { data, error: supabaseError } = await supabase
+                .from('products')
+                .select('*');
+            if (supabaseError) throw supabaseError;
+            const uniqueData = Array.from(new Map((data as Product[]).map(item => [item.id, item])).values()) as Product[];
             setProducts(uniqueData);
         } catch (err) {
             console.error('Fetch error:', err);
@@ -48,21 +47,32 @@ function App() {
         return Array.from(new Set(products.map(p => p.specs?.machine?.trim()).filter(Boolean)));
     }, [products]);
 
+    // Pre-compute counts to avoid N+1 filter-inside-map in sidebar
+    const categoryCounts = useMemo(() =>
+        new Map(categories.map(cat => [cat, products.filter(p => p.category?.trim() === cat).length])),
+    [products, categories]);
+
+    const machineCounts = useMemo(() =>
+        new Map(machines.map(m => [m, products.filter(p => p.specs?.machine?.trim() === m).length])),
+    [products, machines]);
+
     // Filter Logic
     const filteredProducts = useMemo(() => {
+        const searchLower = searchQuery.trim().toLowerCase();
+        const normalizedCategory = selectedCategory?.trim() ?? null;
+        const normalizedMachine = selectedMachine?.trim() ?? null;
         return products.filter(product => {
-            const searchLower = searchQuery.trim().toLowerCase();
             const matchesSearch = !searchLower ||
                 product.name.toLowerCase().includes(searchLower) ||
                 product.id.toLowerCase().includes(searchLower) ||
                 product.category?.toLowerCase().includes(searchLower);
 
-            const matchesCategory = selectedCategory
-                ? product.category?.trim() === selectedCategory.trim()
+            const matchesCategory = normalizedCategory
+                ? product.category?.trim() === normalizedCategory
                 : true;
 
-            const matchesMachine = selectedMachine
-                ? product.specs?.machine?.trim() === selectedMachine.trim()
+            const matchesMachine = normalizedMachine
+                ? product.specs?.machine?.trim() === normalizedMachine
                 : true;
 
             return matchesSearch && matchesCategory && matchesMachine;
@@ -70,110 +80,118 @@ function App() {
     }, [products, searchQuery, selectedCategory, selectedMachine]);
 
     return (
-        <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased">
+        <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
             {/* Header */}
-            <header className="sticky top-0 z-30 flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 shadow-sm">
-                <div className="flex items-center gap-4">
-                    <div className="size-8 text-primary">
-                        <span className="material-symbols-outlined text-3xl">factory</span>
+            <header className="sticky top-0 z-30 flex items-center justify-between border-b-2 border-primary/60 bg-slate-900 px-6 py-3 shadow-lg">
+                <div className="flex items-center gap-4 shrink-0">
+                    <span className="material-symbols-outlined text-primary text-4xl drop-shadow-[0_0_8px_rgba(217,119,6,0.8)]">factory</span>
+                    <div className="flex flex-col gap-0.5">
+                        <h2 className="text-white text-2xl font-black tracking-widest uppercase drop-shadow-[0_0_12px_rgba(217,119,6,0.4)]"
+                            style={{ letterSpacing: '0.15em' }}>
+                            瑞全公司產品目錄
+                        </h2>
+                        <div className="flex items-center gap-2">
+                            <div className="h-px flex-1 bg-gradient-to-r from-primary/80 to-transparent" />
+                            <span className="font-mono text-[10px] text-primary/60 tracking-[0.3em] uppercase">Product Catalog</span>
+                            <span className="font-mono text-[10px] text-primary/40">· v{__APP_VERSION__}</span>
+                        </div>
                     </div>
-                    <h2 className="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">
-                        瑞全公司產品履歷
-                    </h2>
                 </div>
 
-                <div className="hidden md:flex flex-1 justify-center px-12">
-                    <div className="relative w-full max-w-2xl group">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
-                            <span className="material-symbols-outlined">search</span>
+                <div className="hidden md:flex flex-1 justify-center px-10">
+                    <div className="relative w-full max-w-xl group">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-primary transition-colors">
+                            <span className="material-symbols-outlined text-xl">search</span>
                         </div>
                         <input
                             type="text"
                             placeholder="搜尋品番或品名..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="block w-full rounded-lg border-0 py-2.5 pl-10 ring-1 ring-inset ring-slate-300 dark:ring-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white sm:text-sm sm:leading-6 transition-all"
+                            className="block w-full rounded-sm border-0 py-2.5 pl-10 bg-slate-800 text-white placeholder:text-slate-500 ring-1 ring-inset ring-slate-700 focus:ring-2 focus:ring-primary font-mono text-base transition-all"
                         />
                     </div>
                 </div>
 
-                <div className="flex items-center gap-6">
-                    <nav className="hidden lg:flex items-center gap-6">
-                        <a className="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm transition-colors" href="#">產品</a>
-                        <a className="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm transition-colors" href="#">機台</a>
-                        <a className="text-slate-600 dark:text-slate-300 hover:text-primary font-medium text-sm transition-colors" href="#">聯絡我們</a>
-                    </nav>
-                    <div className="flex gap-2 border-l border-slate-200 dark:border-slate-700 pl-6">
-                        <button className="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary transition-colors">
-                            <span className="material-symbols-outlined">notifications</span>
-                        </button>
-                        <button className="flex items-center justify-center rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary transition-colors">
-                            <span className="material-symbols-outlined">account_circle</span>
-                        </button>
-                    </div>
+                <div className="shrink-0">
+                    <span className="font-mono text-sm text-slate-500 tracking-wider hidden lg:block">
+                        {products.length > 0 ? `${products.length} PARTS LOADED` : 'LOADING...'}
+                    </span>
                 </div>
             </header>
+            
+            {/* Mobile Search */}
+            <div className="md:hidden bg-slate-900 px-4 py-2 border-b border-slate-800">
+                <div className="relative w-full group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-primary transition-colors">
+                        <span className="material-symbols-outlined text-xl">search</span>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="搜尋品番或品名..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="block w-full rounded-sm border-0 py-2.5 pl-10 bg-slate-800 text-white placeholder:text-slate-500 ring-1 ring-inset ring-slate-700 focus:ring-2 focus:ring-primary font-mono text-base transition-all"
+                    />
+                </div>
+            </div>
 
             <div className="flex flex-1 overflow-hidden">
                 {/* Sidebar */}
-                <aside className="hidden w-72 flex-col overflow-y-auto border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:flex">
-                    <div className="p-6">
-                        <div className="flex items-center justify-between mb-6">
-                            <h3 className="font-bold text-slate-900 dark:text-white text-lg">篩選條件</h3>
+                <aside className="hidden w-64 flex-col overflow-y-auto border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 lg:flex">
+                    <div className="p-5">
+                        <div className="flex items-center justify-between mb-5">
+                            <span className="font-mono text-xs font-bold text-slate-400 tracking-widest uppercase">篩選條件</span>
                             <button
                                 onClick={() => { setSelectedCategory(null); setSelectedMachine(null); }}
-                                className="text-xs font-medium text-primary hover:text-primary-dark"
+                                className="font-mono text-xs text-primary hover:text-primary-dark tracking-wider uppercase"
                             >
-                                清除全部
+                                CLEAR
                             </button>
                         </div>
 
-                        <div className="mb-8">
-                            <div className="flex items-center justify-between mb-3 cursor-pointer group">
-                                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">產品類別</span>
-                                <span className="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm">expand_less</span>
-                            </div>
-                            <div className="space-y-1">
-                                <label
-                                    className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer group transition-colors ${!selectedCategory ? 'bg-primary/10 text-primary' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                        {/* Category Filter */}
+                        <div className="mb-6">
+                            <p className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">車型</p>
+                            <div className="space-y-0.5">
+                                <button
+                                    className={`w-full text-left px-3 py-2 text-base font-medium transition-colors rounded-sm ${!selectedCategory ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                                     onClick={() => setSelectedCategory(null)}
                                 >
-                                    <span className="text-sm font-medium">全部展示</span>
-                                </label>
+                                    全部
+                                </button>
                                 {categories.map(category => (
-                                    <label
+                                    <button
                                         key={category}
-                                        className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer group transition-colors ${selectedCategory === category ? 'bg-primary/10 text-primary' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                                        className={`w-full text-left px-3 py-2 flex items-center justify-between text-base transition-colors rounded-sm ${selectedCategory === category ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                                         onClick={() => setSelectedCategory(category)}
                                     >
-                                        <span className="text-sm font-medium">{category}</span>
-                                        <span className="text-xs opacity-50">({products.filter(p => p.category === category).length})</span>
-                                    </label>
+                                        <span className="font-medium">{category}</span>
+                                        <span className={`font-mono text-xs ${selectedCategory === category ? 'text-white/70' : 'text-slate-400'}`}>{categoryCounts.get(category) ?? 0}</span>
+                                    </button>
                                 ))}
                             </div>
                         </div>
 
-                        <div className="mb-8">
-                            <div className="flex items-center justify-between mb-3 cursor-pointer group">
-                                <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">機台別</span>
-                                <span className="material-symbols-outlined text-slate-400 group-hover:text-primary text-sm">expand_less</span>
-                            </div>
-                            <div className="space-y-1">
-                                <label
-                                    className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer group transition-colors ${!selectedMachine ? 'bg-primary/10 text-primary' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                        {/* Machine Filter */}
+                        <div className="mb-6">
+                            <p className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">機台別</p>
+                            <div className="space-y-0.5">
+                                <button
+                                    className={`w-full text-left px-3 py-2 text-base font-medium transition-colors rounded-sm ${!selectedMachine ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                                     onClick={() => setSelectedMachine(null)}
                                 >
-                                    <span className="text-sm font-medium">全部展示</span>
-                                </label>
+                                    全部
+                                </button>
                                 {machines.map(machine => (
-                                    <label
+                                    <button
                                         key={machine}
-                                        className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer group transition-colors ${selectedMachine === machine ? 'bg-primary/10 text-primary' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400'}`}
+                                        className={`w-full text-left px-3 py-2 flex items-center justify-between text-base transition-colors rounded-sm ${selectedMachine === machine ? 'bg-primary text-white' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                                         onClick={() => setSelectedMachine(machine)}
                                     >
-                                        <span className="text-sm font-medium">{machine}</span>
-                                        <span className="text-xs opacity-50">({products.filter(p => p.specs?.machine?.trim() === machine).length})</span>
-                                    </label>
+                                        <span className="font-medium font-mono text-sm">{machine}</span>
+                                        <span className={`font-mono text-xs ${selectedMachine === machine ? 'text-white/70' : 'text-slate-400'}`}>{machineCounts.get(machine) ?? 0}</span>
+                                    </button>
                                 ))}
                             </div>
                         </div>
@@ -181,19 +199,17 @@ function App() {
                 </aside>
 
                 {/* Main Content */}
-                <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 lg:p-10">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
-                        <nav aria-label="Breadcrumb" className="flex">
-                            <ol className="flex items-center space-x-2">
-                                <li><a className="text-slate-500 hover:text-primary text-sm font-medium" href="#">首頁</a></li>
-                                <li><span className="text-slate-400 text-sm">/</span></li>
-                                <li><a className="text-slate-500 hover:text-primary text-sm font-medium" href="#">目錄</a></li>
-                                <li><span className="text-slate-400 text-sm">/</span></li>
-                                <li><span aria-current="page" className="text-slate-900 dark:text-white text-sm font-semibold">所有產品</span></li>
-                            </ol>
-                        </nav>
-                        <span className="text-sm text-slate-500 dark:text-slate-400">
-                            顯示 <span className="font-bold text-slate-900 dark:text-white">{filteredProducts.length}</span> 筆產品
+                <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-5 lg:p-8">
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            {(selectedCategory || selectedMachine || searchQuery) && (
+                                <span className="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded-sm">
+                                    已篩選
+                                </span>
+                            )}
+                        </div>
+                        <span className="font-mono text-xs text-slate-400 tracking-wider">
+                            {filteredProducts.length} / {products.length} PARTS
                         </span>
                     </div>
 
@@ -240,7 +256,7 @@ function App() {
                                         key={product.id}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: index * 0.05 }}
+                                        transition={{ delay: Math.min(index * 0.05, 0.3) }}
                                     >
                                         <ProductCard
                                             product={product}
@@ -274,6 +290,7 @@ function App() {
                     onClose={() => setSelectedProduct(null)}
                 />
             )}
+
         </div>
     );
 }

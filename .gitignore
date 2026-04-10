@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 
+# Import scripts with secrets
+import_to_supabase.mjs
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
