@@ -68,12 +68,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                             生產規格
                                         </h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 dark:bg-slate-700 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
-                                            <SpecItem label="CT 時間" value={product.specs.ct_time} />
-                                            <SpecItem label="重量" value={product.specs.weight} />
-                                            <SpecItem label="原料編號" value={product.specs.material} isRawMaterial />
-                                            <SpecItem label="機台" value={product.specs.machine} isLink />
-                                            <SpecItem label="組裝時間" value={product.specs.assembly_time} />
-                                            <SpecItem label="模具廠商" value={product.specs.mold_maker} isLink />
+                                            <SpecItem label="CT 時間" value={product.ct_time} />
+                                            <SpecItem label="重量" value={product.weight} />
+                                            <SpecItem label="原料編號" value={product.material} isRawMaterial />
+                                            <SpecItem label="機台" value={product.machine} isLink />
+                                            <SpecItem label="組裝時間" value={product.assembly_time} />
+                                            <SpecItem label="模具廠商" value={product.mold_maker} isLink />
                                         </div>
                                     </section>
 
@@ -84,8 +84,8 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                             包裝物流
                                         </h3>
                                         <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-4 grid grid-cols-1 sm:grid-cols-2 gap-6 shadow-sm">
-                                            <LogisticsItem icon="box" label="出貨容器" value={product.specs.container} />
-                                            <LogisticsItem icon="widgets" label="收容數" value={product.specs.capacity} />
+                                            <LogisticsItem icon="box" label="出貨容器" value={product.container} />
+                                            <LogisticsItem icon="widgets" label="收容數" value={product.capacity} />
                                         </div>
                                     </section>
                                 </div>

@@ -45,7 +45,7 @@ function App() {
 
     // Get unique machines and remove any empties
     const machines = useMemo(() => {
-        return Array.from(new Set(products.map(p => p.specs?.machine?.trim()).filter(Boolean)));
+        return Array.from(new Set(products.map(p => p.machine?.trim()).filter(Boolean)));
     }, [products]);
 
     // Get unique types (射出/組裝/etc)
@@ -59,7 +59,7 @@ function App() {
     [products, categories]);
 
     const machineCounts = useMemo(() =>
-        new Map(machines.map(m => [m, products.filter(p => p.specs?.machine?.trim() === m).length])),
+        new Map(machines.map(m => [m, products.filter(p => p.machine?.trim() === m).length])),
     [products, machines]);
 
     const typeCounts = useMemo(() =>
@@ -83,7 +83,7 @@ function App() {
                 : true;
 
             const matchesMachine = normalizedMachine
-                ? product.specs?.machine?.trim() === normalizedMachine
+                ? product.machine?.trim() === normalizedMachine
                 : true;
 
             const matchesType = normalizedType

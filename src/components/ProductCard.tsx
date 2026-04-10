@@ -60,11 +60,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
                 <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
                     <div className="flex items-center gap-1 text-slate-400 min-w-0">
                         <span className="material-symbols-outlined text-base shrink-0">precision_manufacturing</span>
-                        <span className="font-mono text-xs truncate">{product.specs.machine || '—'}</span>
+                        <span className="font-mono text-xs truncate">{product.machine || '—'}</span>
                     </div>
-                    {product.specs.material && (
+                    {product.material && (
                         <span className="font-mono text-xs font-bold text-slate-500 dark:text-slate-500 bg-slate-50 dark:bg-slate-800 px-2 py-0.5 rounded-sm shrink-0 truncate max-w-[90px]">
-                            {product.specs.material}
+                            {product.material}
                         </span>
                     )}
                 </div>
