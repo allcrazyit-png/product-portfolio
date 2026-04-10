@@ -43,6 +43,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                                         生產中
                                     </span>
                                     <span className="text-sm text-slate-500 dark:text-slate-400">分類：{product.category}</span>
+                                    {product.type && (
+                                        <span className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs font-bold text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                                            {product.type}
+                                        </span>
+                                    )}
                                 </div>
                             </div>
                             <button

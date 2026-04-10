@@ -46,8 +46,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
                     {product.name}
                 </h3>
 
-                {/* Category */}
-                <p className="text-sm text-slate-500 dark:text-slate-400 mb-auto">{product.category}</p>
+                {/* Category & Type */}
+                <div className="flex items-center gap-2 mb-auto">
+                    <p className="text-sm text-slate-500 dark:text-slate-400">{product.category}</p>
+                    {product.type && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                            {product.type}
+                        </span>
+                    )}
+                </div>
 
                 {/* Footer */}
                 <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">

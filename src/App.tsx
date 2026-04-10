@@ -13,6 +13,7 @@ function App() {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [selectedMachine, setSelectedMachine] = useState<string | null>(null);
+    const [selectedType, setSelectedType] = useState<string | null>(null);
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
     const fetchData = async () => {
@@ -47,6 +48,11 @@ function App() {
         return Array.from(new Set(products.map(p => p.specs?.machine?.trim()).filter(Boolean)));
     }, [products]);
 
+    // Get unique types (射出/組裝/etc)
+    const types = useMemo(() => {
+        return Array.from(new Set(products.map(p => p.type?.trim()).filter(Boolean)));
+    }, [products]);
+
     // Pre-compute counts to avoid N+1 filter-inside-map in sidebar
     const categoryCounts = useMemo(() =>
         new Map(categories.map(cat => [cat, products.filter(p => p.category?.trim() === cat).length])),
@@ -56,11 +62,16 @@ function App() {
         new Map(machines.map(m => [m, products.filter(p => p.specs?.machine?.trim() === m).length])),
     [products, machines]);
 
+    const typeCounts = useMemo(() =>
+        new Map(types.map(t => [t, products.filter(p => p.type?.trim() === t).length])),
+    [products, types]);
+
     // Filter Logic
     const filteredProducts = useMemo(() => {
         const searchLower = searchQuery.trim().toLowerCase();
         const normalizedCategory = selectedCategory?.trim() ?? null;
         const normalizedMachine = selectedMachine?.trim() ?? null;
+        const normalizedType = selectedType?.trim() ?? null;
         return products.filter(product => {
             const matchesSearch = !searchLower ||
                 product.name.toLowerCase().includes(searchLower) ||
@@ -75,9 +86,13 @@ function App() {
                 ? product.specs?.machine?.trim() === normalizedMachine
                 : true;
 
-            return matchesSearch && matchesCategory && matchesMachine;
+            const matchesType = normalizedType
+                ? product.type?.trim() === normalizedType
+                : true;
+
+            return matchesSearch && matchesCategory && matchesMachine && matchesType;
         });
-    }, [products, searchQuery, selectedCategory, selectedMachine]);
+    }, [products, searchQuery, selectedCategory, selectedMachine, selectedType]);
 
     return (
         <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
@@ -143,7 +158,7 @@ function App() {
                         <div className="flex items-center justify-between mb-5">
                             <span className="font-mono text-xs font-bold text-slate-400 tracking-widest uppercase">篩選條件</span>
                             <button
-                                onClick={() => { setSelectedCategory(null); setSelectedMachine(null); }}
+                                onClick={() => { setSelectedCategory(null); setSelectedMachine(null); setSelectedType(null); }}
                                 className="font-mono text-xs text-primary hover:text-primary-dark tracking-wider uppercase"
                             >
                                 CLEAR
@@ -168,6 +183,22 @@ function App() {
                                     >
                                         <span className="font-medium">{category}</span>
                                         <span className={`font-mono text-xs ${selectedCategory === category ? 'text-white/70' : 'text-slate-400'}`}>{categoryCounts.get(category) ?? 0}</span>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Type Filter */}
+                        <div className="mb-6">
+                            <p className="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">製造類別</p>
+                            <div className="flex flex-wrap gap-1 px-1">
+                                {types.map(type => (
+                                    <button
+                                        key={type}
+                                        className={`px-3 py-1.5 text-sm font-bold border transition-all rounded-full ${selectedType === type ? 'bg-primary border-primary text-white shadow-md shadow-primary/20' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary/50'}`}
+                                        onClick={() => setSelectedType(selectedType === type ? null : type)}
+                                    >
+                                        {type}
                                     </button>
                                 ))}
                             </div>
@@ -202,7 +233,7 @@ function App() {
                 <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-5 lg:p-8">
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
-                            {(selectedCategory || selectedMachine || searchQuery) && (
+                            {(selectedCategory || selectedMachine || selectedType || searchQuery) && (
                                 <span className="font-mono text-xs text-primary bg-primary/10 px-2 py-1 rounded-sm">
                                     已篩選
                                 </span>

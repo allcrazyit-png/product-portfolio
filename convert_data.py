@@ -21,6 +21,7 @@ with open(csv_file_path, mode='r', encoding='utf-8-sig') as csv_file:
             "id": product_id,
             "name": row['品名'],
             "category": row['車型'], # Assuming '車型' is a good category, or maybe '客戶'
+            "type": row.get('類別', ''), # New field for Production category (射出, 組裝...)
             "description": f"{row['品名']} for {row['車型']}", # Generating a description
             "image": row['產品圖片'],
             "status": "Production", # Default status
